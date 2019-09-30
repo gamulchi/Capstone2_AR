@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -247,6 +247,9 @@ MonoBehaviour:
   Bullet: {fileID: 1976836715188523226, guid: 66fb98472e918ff4b80fce699befd160, type: 3}
   CText: {fileID: 0}
   i: 0
+  ShootingTermTime: 3
+  ShootingTime: 0
+  TimeCheckStart: 0
 --- !u!1 &58239030
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +432,7 @@ GameObject:
   - component: {fileID: 1176722069}
   - component: {fileID: 1176722068}
   - component: {fileID: 1176722067}
+  - component: {fileID: 1176722071}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -516,6 +520,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1176722071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176722066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000acdf023401734486dbfe95240b817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuizCSV: {fileID: 0}
+  AllText: 
+  CSVHeight: 0
+  CSVWidth: 0
 --- !u!1 &1533481438
 GameObject:
   m_ObjectHideFlags: 0
