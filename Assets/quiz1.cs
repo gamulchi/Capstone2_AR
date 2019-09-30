@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 //using ex; //전역변수 사용할 namespace
 
 public class quiz1 : MonoBehaviour
