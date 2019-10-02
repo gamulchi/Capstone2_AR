@@ -11,7 +11,7 @@ public class UFOMove : MonoBehaviour
     }
     void Move()
     {
-        transform.Translate(Vector3.down * Speed * Time.deltaTime);
+        transform.Translate(Vector3.back * Speed * Time.deltaTime);
     }
     // Update is called once per frame
     void Update()
