@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Canvas
   - UfoSpawnSpot
+  - Ground
+  - Bullet
+  - Ufo
+  - Answer
   layers:
   - Default
   - TransparentFX

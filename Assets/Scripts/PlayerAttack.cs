@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerAttack : MonoBehaviour
 {
     public GameObject Bullet;
-    public Text CText;
     public int i;
     public float ShootingTermTime = 3;
     public float ShootingTime = 0;
@@ -14,10 +13,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!CText)
-        {
-            CText = GameObject.FindGameObjectWithTag("Canvas").transform.Find("Text").gameObject.GetComponent<Text>();
-        }   
+        
     }
 
     // Update is called once per frame
@@ -49,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
                 case TouchPhase.Ended:
                     if (TimeCheckStart == false)
                     {
-                        if (Bullet)
+                        if (Bullet&&GameObject.FindGameObjectWithTag("Canvas").GetComponent<QuizCSVParser>().CurrentPlayState==QuizCSVParser.PlayState.NoQuiz)
                         {
                             Instantiate(Bullet, transform.parent);
                         }
@@ -59,7 +55,6 @@ public class PlayerAttack : MonoBehaviour
                     break;
             }
             
-            CText.text = "SCREEn TOUCH:"+Input.touchCount;
             
         }
         
