@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Canvas
+  - UfoSpawnSpot
+  - Ground
+  - Bullet
+  - Ufo
+  - Answer
   layers:
   - Default
   - TransparentFX
