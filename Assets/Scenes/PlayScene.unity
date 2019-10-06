@@ -238,7 +238,7 @@ MonoBehaviour:
   UfoSpawnList: []
   UFOprefab: {fileID: 0}
   SpawnTime: 5
-  CanUfoMake: 1
+  CanUfoMake: 0
   UfoAngleX: 45
   UfoAngleY: 0
   UfoAngleZ: 0
@@ -862,6 +862,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463373538158381678, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: m_text
+      value: "\uBC88\uC9F8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463373538158381678, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463373538158381678, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463373538158381678, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463373537719836326, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: m_Name
+      value: Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463373538978089901, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: m_Name
+      value: Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463373539398356168, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: m_Name
+      value: Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9993d29c7cb3b41a502c7b73ca7395, type: 3}

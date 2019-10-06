@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.UI;
 using TMPro;
 public class QuizCSVParser : MonoBehaviour
     //캔버스에 달아놓은 스크립트,퀴즈 파싱과 퀴즈 표시 시간 제어
@@ -20,9 +19,8 @@ public class QuizCSVParser : MonoBehaviour
     public int CSVWidth;
     public string[,] data;
     public int x = 0;
-    public List<int> Index = new List<int>();
-    //몇번 퀴즈를 고를 것인지 랜덤으로 돌리는 함수
-    // public List<List<string>> data = new List<List<string>>();
+    public string RightAnswer;
+    
     public List<QUIZ> QuizList = new List<QUIZ>();
     public int KillingUfoCount = 0;
     public enum PlayState { NoQuiz,QuizStarted,QuizFinished}
@@ -37,7 +35,44 @@ public class QuizCSVParser : MonoBehaviour
             //처음 startcorroutine으로 불러올때 while문 조건과 안맞으면 update에서 조건 맞아도 실행 안됨
             if (KillingUfoCount == 5 && CurrentPlayState == PlayState.NoQuiz)
             {
+                int QuizNum;
                 //중간에 killingUFOCount 값 바뀌어도 한번 들어갔으므로 if문 전체 돌아감
+                #region 퀴즈 몇번째인지 알아내는 함수
+                string pattern = @"^[0-9]*$";
+                //정규 표현식
+                print("string made");
+                if (System.Text.RegularExpressions.Regex.IsMatch(QuizIndex.GetComponent<TextMeshProUGUI>().text, pattern) == false)
+                {
+                    print("Ismactch check1");
+                    QuizIndex.GetComponent<TextMeshProUGUI>().text = "1번째 퀴즈";
+                    //만약 퀴즈 인덱스에 숫자가 없다면->게임 플레이 초반=아직 퀴즈 한번도 안나왔음
+
+                }
+                if (System.Text.RegularExpressions.Regex.IsMatch(QuizIndex.GetComponent<TextMeshProUGUI>().text, pattern) == true)
+                {
+                    print("Ismactch check2");
+                    QuizNum = Convert.ToInt32(QuizIndex.GetComponent<TextMeshProUGUI>().text.Substring(0, 1));
+                    QuizNum++;                        
+                    print("quiznum" + QuizNum);
+                }
+                #endregion
+                int randNum = UnityEngine.Random.Range(0, QuizList.Count);
+                QuizText.GetComponent<TextMeshProUGUI>().text = QuizList[randNum].QuizText;
+                print("QUIZ+TEXT+END");
+                List<int> ar = new List<int>(3) { 0, 1, 2 };
+                List<int> randar = new List<int>(3);
+                print("list end");
+                for(int i = 0; i < randar.Count; i++)
+                {
+                    int randrand = UnityEngine.Random.Range(0, 3);
+                    randar[i] = ar[randrand];
+                    ar.RemoveAt(randrand);
+                }
+                print("for end");
+               //이 밑으로 에러
+                AnswerButtons[randar[0]].transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = QuizList[randNum].Answer;
+                AnswerButtons[randar[1]].transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = QuizList[randNum].WrongAnswer1;
+                AnswerButtons[randar[2]].transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = QuizList[randNum].WrongAnswer2;
                 print("QUIZ UI COrroutine");
                 if (QuizText.activeInHierarchy == false)
                 {
@@ -58,6 +93,7 @@ public class QuizCSVParser : MonoBehaviour
                         AnswerButtons[i].SetActive(true);
                     }
                 }
+                print("active");
                 
                 CurrentPlayState = PlayState.QuizStarted;
 
@@ -87,16 +123,7 @@ public class QuizCSVParser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Index.Clear();
-        List<int> RandRand = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
-        print("rand count: " + RandRand.Count);
-        for(int i = 0; i < RandRand.Count; i++)
-        {
-            int x= UnityEngine.Random.Range(0, RandRand.Count);
-            print("i:" + i + " x:" + x + " value" + RandRand[x]);
-            Index.Add(RandRand[x]);
-            RandRand.RemoveAt(x);
-        }
+        
         #region 퀴즈 UI 요소들 찾기
         AnswerButtons.Clear();
         if (!QuizText)
@@ -115,6 +142,7 @@ public class QuizCSVParser : MonoBehaviour
         {
             if (child.gameObject.tag == "Answer")
             {
+                print("answer");
                 AnswerButtons.Add(child.gameObject);
             }
         }
