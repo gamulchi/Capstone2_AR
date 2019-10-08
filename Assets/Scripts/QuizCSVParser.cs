@@ -61,15 +61,19 @@ public class QuizCSVParser : MonoBehaviour
                 print("QUIZ+TEXT+END");
                 List<int> ar = new List<int>(3) { 0, 1, 2 };
                 List<int> randar = new List<int>(3);
-                print("list end");
-                for(int i = 0; i < randar.Count; i++)
+                //list 길이 지정해놔도 randar 길이 0나옴.원소 넣어줘야 0아니게 됨
+                print("list end"+randar.Count);
+                //이 밑으로 에러=randar에러
+
+                for (int i = 0; i < 3; i++)
                 {
-                    int randrand = UnityEngine.Random.Range(0, 3);
-                    randar[i] = ar[randrand];
+                    int randrand = UnityEngine.Random.Range(0, ar.Count);
+                    print("ran" + randrand);
+                    randar.Add(ar[randrand]);
+                    print("randar" + "[" + i + "]:" + randar[i] + " ar[" + randrand + "]: " + ar[randrand]);
                     ar.RemoveAt(randrand);
                 }
-                print("for end");
-               //이 밑으로 에러
+                
                 AnswerButtons[randar[0]].transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = QuizList[randNum].Answer;
                 AnswerButtons[randar[1]].transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = QuizList[randNum].WrongAnswer1;
                 AnswerButtons[randar[2]].transform.Find("Text").gameObject.GetComponent<TextMeshProUGUI>().text = QuizList[randNum].WrongAnswer2;

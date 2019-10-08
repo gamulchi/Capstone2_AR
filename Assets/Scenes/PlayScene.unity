@@ -898,6 +898,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text
       objectReference: {fileID: 0}
+    - target: {fileID: 3463373539222390373, guid: 3a9993d29c7cb3b41a502c7b73ca7395,
+        type: 3}
+      propertyPath: KillingUfoCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a9993d29c7cb3b41a502c7b73ca7395, type: 3}
 --- !u!4 &6947892653314543693
