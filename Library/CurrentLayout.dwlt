@@ -73,7 +73,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 344}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 92
+  controlID: 100
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 91
+  controlID: 99
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -497,7 +497,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: cc61ffff0662ffff1c63ffff4e63ffff8063ffff9664ffffc864ffffe265ffff1266ffff4466ffffcc73ffff5e75ffff9475ffff3c9affffa09dffffc0acffff4aadffff80adffff9eaefffff4aeffff32afffff0cb4ffff50b4ffff0cb7ffff4ab8ffff80b8ffff9ab9ffffc2c6ffff60c7fffff4c7ffff10c9ffff48c9ffff30cbffffca410000ae450000b84d0000e2560000
+      m_ExpandedIDs: f6f8ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 378.23624, y: 271.9136, z: -116.35109}
+    m_Target: {x: 249.0029, y: 140.0033, z: 0}
     speed: 2
     m_Value: {x: 378.23624, y: 271.9136, z: -116.35109}
   m_RenderMode: 0
@@ -588,11 +588,11 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.25675073, y: -0.29480216, z: 0.08262344, w: 0.9167047}
+    m_Target: {x: -0.038880803, y: 0.021821914, z: 0.00089948566, w: 0.9990066}
     speed: 2
-    m_Value: {x: 0.25675032, y: -0.29480165, z: 0.082623295, w: 0.91670316}
+    m_Value: {x: -0.25675073, y: 0.29480216, z: -0.08262344, w: -0.9167047}
   m_Size:
-    m_Target: 6.786402
+    m_Target: 942.67224
     speed: 2
     m_Value: 6.786402
   m_Ortho:
@@ -683,20 +683,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\deat\Documents\GitHub\Capstone2_AR
+  m_LastProjectPath: C:\Users\deat\Desktop\Capstone2_AR-GAYOUNG_BRANCH
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5a3c0000
-    m_LastClickedID: 15450
-    m_ExpandedIDs: 00000000c43900004e3a00006c3b0000403c0000783d0000a43d0000123e000000ca9a3b
+    m_SelectedIDs: 922c0000
+    m_LastClickedID: 11410
+    m_ExpandedIDs: 00000000922c00003c2d0000f62e00003a300000da31000012320000c632000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -724,7 +724,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c43900004e3a00006c3b0000783d0000a43d0000123e0000
+    m_ExpandedIDs: 00000000922c00003c2d0000f62e00003a300000da31000012320000c6320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000502a0000303500002c5f000000000000aa2c0000dcc00000ec270000d62600006e270000b0300000ba2700006a0c000090730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
