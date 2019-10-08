@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerAttack : MonoBehaviour
 {
     public GameObject Bullet;
-    public Text CText;
     public int i;
     public float ShootingTermTime = 3;
     public float ShootingTime = 0;
@@ -14,10 +13,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (!CText)
-        {
-            CText = GameObject.FindGameObjectWithTag("Canvas").transform.Find("Text").gameObject.GetComponent<Text>();
-        }   
+        
     }
 
     // Update is called once per frame
@@ -36,20 +32,26 @@ public class PlayerAttack : MonoBehaviour
             }
 
         }
-        
-       
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Transform Cam = Camera.main.transform;
+
+            Instantiate(Bullet, Cam.position, Cam.rotation);
+        }
+        /*
         if (Input.touchCount==1)
 
         {
+            
             Touch touch = Input.GetTouch(0);
-
+            
             
             switch (touch.phase) {
                 //이 switch 문 이 있어야 한번 터치할때 Bullet 여러개 instantiate 안됨
                 case TouchPhase.Ended:
                     if (TimeCheckStart == false)
                     {
-                        if (Bullet)
+                        if (Bullet&&GameObject.FindGameObjectWithTag("Canvas").GetComponent<QuizCSVParser>().CurrentPlayState==QuizCSVParser.PlayState.NoQuiz)
                         {
                             Instantiate(Bullet, transform.parent);
                         }
@@ -59,9 +61,9 @@ public class PlayerAttack : MonoBehaviour
                     break;
             }
             
-            CText.text = "SCREEn TOUCH:"+Input.touchCount;
+
             
         }
-        
+        */
     }
 }
