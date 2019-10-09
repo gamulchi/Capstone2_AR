@@ -32,6 +32,7 @@ public class BulletMove : MonoBehaviour
         if (other.gameObject.tag == "Ufo")
         {
             print("Bullet Meets UFO");
+            GameObject.Find("ScoreCanvas").GetComponent<Score>().ScoreT += 5;
             Destroy(this.gameObject);
         }
     }
