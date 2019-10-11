@@ -13,25 +13,32 @@ public class TemporaryUfoMaker : MonoBehaviour
     public int UfoAngleY=0;
     public int UfoAngleZ=0;
     public Quaternion UfoAngle;
+    //오브젝트 풀링 필요
+    public List<GameObject> Recycles= new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
         UfoAngle = Quaternion.Euler(UfoAngleX, UfoAngleY, UfoAngleZ);
         UfoSpawnList.Clear();
-        for(int i = 0; i < GameObject.FindGameObjectsWithTag("UfoSpawnSpot").Length; i++)
+        for (int i = 0; i < GameObject.FindGameObjectsWithTag("UfoSpawnSpot").Length; i++)
         {
-                int x = (int)GameObject.FindGameObjectsWithTag("UfoSpawnSpot")[i].transform.position.x;
-                int y = (int)GameObject.FindGameObjectsWithTag("UfoSpawnSpot")[i].transform.position.y;
-                int z = (int)GameObject.FindGameObjectsWithTag("UfoSpawnSpot")[i].transform.position.z;
-                Vector3 Vec = new Vector3(x,y,z);
-                UfoSpawnList.Add(Vec);
+            int x = (int)GameObject.FindGameObjectsWithTag("UfoSpawnSpot")[i].transform.position.x;
+            int y = (int)GameObject.FindGameObjectsWithTag("UfoSpawnSpot")[i].transform.position.y;
+            int z = (int)GameObject.FindGameObjectsWithTag("UfoSpawnSpot")[i].transform.position.z;
+            Vector3 Vec = new Vector3(x, y, z);
+            UfoSpawnList.Add(Vec);
         }
-        
+
         if (!UFOprefab)
         {
             UFOprefab = Resources.Load("TemporaryUfo") as GameObject;
         }
         StartCoroutine(MakeUFO());
+
+        var temp = ObjectPoolMgr._instance.heroSlotPool.PopObject();
+        //temp.gameObject.transform.position  = new TrackedReference.
+
+        temp.Dispose();
     }
     IEnumerator MakeUFO()
     {
@@ -44,10 +51,8 @@ public class TemporaryUfoMaker : MonoBehaviour
                     for (int i = 0; i < UfoSpawnList.Count; i++)
                     {
                         Instantiate(UFOprefab, new Vector3(UfoSpawnList[i].x, UfoSpawnList[i].y, UfoSpawnList[i].z), UfoAngle);
-                        
                     }
                 }
-
                 yield return new WaitForSeconds(SpawnTime);
             }
             

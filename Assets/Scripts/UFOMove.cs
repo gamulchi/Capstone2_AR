@@ -5,6 +5,7 @@ using UnityEngine;
 public class UFOMove : MonoBehaviour
 {
     public float Speed = 3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,10 @@ public class UFOMove : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             print("Ufo Meets Ground "+  this.gameObject.name);
+            if (GameObject.FindGameObjectWithTag("Canvas").transform.Find("Life").gameObject.GetComponent<LifeManager>().IsTouched == false)
+            {
+                GameObject.FindGameObjectWithTag("Canvas").transform.Find("Life").gameObject.GetComponent<LifeManager>().IsTouched=true;
+            }
             Destroy(this.gameObject);
         }
         if (other.gameObject.tag == "Bullet")
