@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8CEB5677-A91A-C8BD-3918-AC399BEEA27F}</ProjectGuid>
+    <ProjectGuid>{12C4D337-FA45-6C6D-781F-AB7B2B0D9737}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>VuforiaScripts</AssemblyName>
@@ -273,19 +273,19 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

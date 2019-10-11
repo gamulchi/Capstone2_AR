@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{66DBCAA8-BCF2-734F-1790-B33A7BD1A963}</ProjectGuid>
+    <ProjectGuid>{34216C49-0498-609F-F018-BDF4C272254F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -67,6 +67,7 @@
     <Compile Include="Assets\GE Common Assets\Scripts\GE_UIResponder.cs" />
     <Compile Include="Assets\quiz1.cs" />
     <Compile Include="Assets\Scripts\BulletMove.cs" />
+    <Compile Include="Assets\Scripts\IntroPlay.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\QuizCSVParser.cs" />
     <Compile Include="Assets\Scripts\QuizTextUI.cs" />
@@ -108,25 +109,25 @@
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -309,13 +310,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR - gahyun/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/유니티 프로젝트(유니티업뎃전 꼭 백업!)/Capstone2_AR_gayoung/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.4f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -665,11 +666,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="VuforiaScripts.csproj">
-      <Project>{8CEB5677-A91A-C8BD-3918-AC399BEEA27F}</Project>
+      <Project>{12C4D337-FA45-6C6D-781F-AB7B2B0D9737}</Project>
       <Name>VuforiaScripts</Name>
     </ProjectReference>
     <ProjectReference Include="VuforiaEditorScripts.csproj">
-      <Project>{30AACE30-F5BB-7205-B117-9F49DF9D28CE}</Project>
+      <Project>{08BD2A07-37B2-C59C-04B5-9AA2B220DA4A}</Project>
       <Name>VuforiaEditorScripts</Name>
     </ProjectReference>
   </ItemGroup>
