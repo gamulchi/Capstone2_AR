@@ -14,7 +14,8 @@ public class TemporaryUfoMaker : MonoBehaviour
     public int UfoAngleZ=0;
     public Quaternion UfoAngle;
     //오브젝트 풀링 필요
-    public List<GameObject> Recycles= new List<GameObject>();
+    public List<GameObject> ShowingUFOs=new List<GameObject>();
+    public List<GameObject> AllUFos= new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +36,8 @@ public class TemporaryUfoMaker : MonoBehaviour
         }
         StartCoroutine(MakeUFO());
 
-        var temp = ObjectPoolMgr._instance.heroSlotPool.PopObject();
         //temp.gameObject.transform.position  = new TrackedReference.
 
-        temp.Dispose();
     }
     IEnumerator MakeUFO()
     {

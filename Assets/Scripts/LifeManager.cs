@@ -9,7 +9,6 @@ public class LifeManager : MonoBehaviour
     public List<GameObject> Lifes = new List<GameObject>();
     public int CurrentLifeCount;
     public GameObject PauseButton;
-    public bool IsTouched = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,23 +66,24 @@ public class LifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsTouched == true)
-        {
-            CurrentLifeCount--;
-            IsTouched = false;
-        }
+        
         ManagineLifes();
     }
     void ManagineLifes()
     {
-        for (int i = Lifes.Count; i > CurrentLifeCount; i--)
+        if (CurrentLifeCount > 0)
         {
-            if (Lifes[i - 1].activeInHierarchy == true)
+            for (int i = Lifes.Count; i > CurrentLifeCount; i--)
             {
-                print((i - 1) + "번째 목숨 비활성화");
-                Lifes[i - 1].SetActive(false);
+                if (Lifes[i - 1].activeInHierarchy == true)
+                {
+                    print((i - 1) + "번째 목숨 비활성화");
+                    Lifes[i - 1].SetActive(false);
+                }
+
             }
-            
+        }
+        
            
         if (CurrentLifeCount <= 0)
             {
@@ -105,12 +105,11 @@ public class LifeManager : MonoBehaviour
                 {
                     Lifes[3].SetActive(false);
                 }
-                if (Canvas.GetComponent<EndingManager>().CurrentEndingState == EndingManager.EndingState.GameNotFinished)
+                if (Canvas.GetComponent<EndingManager>().CurrentEndingState == EndingManager.EndingState.GamePlaying)
                 {
                     Canvas.GetComponent<EndingManager>().CurrentEndingState = EndingManager.EndingState.BadEnding;
 
                 }
             }
-        }
     }
 }

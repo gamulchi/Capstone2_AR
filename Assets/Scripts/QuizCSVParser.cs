@@ -13,7 +13,6 @@ public class QuizCSVParser : MonoBehaviour
     public GameObject QuizBackground;
     public List<GameObject> AnswerButtons = new List<GameObject>();
     public GameObject RightAnswerButton;
-    public GameObject HappyEndingImage;
     #endregion
     #region 퀴즈 CSV 파싱
     public string AllText;
@@ -27,6 +26,9 @@ public class QuizCSVParser : MonoBehaviour
     public int KillingUfoCount = 0;
     public enum PlayState { NoQuiz,QuizStarted,QuizFinished}
     public PlayState CurrentPlayState=PlayState.NoQuiz;
+    public enum QuizType { NotYet,English,Math};
+    private bool QuizLambdaBool = false;
+    public QuizType ChooseQuiz = QuizType.NotYet; 
     #endregion
     public GameObject UFOManager;
     IEnumerator QuizUIManager()
@@ -38,7 +40,7 @@ public class QuizCSVParser : MonoBehaviour
             
             yield return new WaitForEndOfFrame();
             //처음 startcorroutine으로 불러올때 while문 조건과 안맞으면 update에서 조건 맞아도 실행 안됨
-
+            yield return new WaitUntil(() => QuizLambdaBool);
             #region 퀴즈 나타나게 하는 함수
             if (KillingUfoCount == 5 && CurrentPlayState == PlayState.NoQuiz)
             {
@@ -86,7 +88,7 @@ public class QuizCSVParser : MonoBehaviour
                         {
                             print("모든 퀴즈 맞춤");
                             //마지막 퀴즈라면
-                            if(this.gameObject.GetComponent<EndingManager>().CurrentEndingState ==EndingManager.EndingState.GameNotFinished)
+                            if(this.gameObject.GetComponent<EndingManager>().CurrentEndingState ==EndingManager.EndingState.GamePlaying)
                             {
                                 this.gameObject.GetComponent<EndingManager>().CurrentEndingState = EndingManager.EndingState.HappyEnding;
                             }
@@ -94,6 +96,7 @@ public class QuizCSVParser : MonoBehaviour
                     }
                 }
                 #endregion
+              
               
             }
             #endregion
@@ -155,10 +158,7 @@ public class QuizCSVParser : MonoBehaviour
                 AnswerButtons.Add(child.gameObject);
             }
         }
-        if (!HappyEndingImage)
-        {
-            HappyEndingImage = transform.Find("HappyEnding").gameObject;
-        }
+       
 
         #endregion
         #region CSV 파싱 부분
@@ -169,6 +169,10 @@ public class QuizCSVParser : MonoBehaviour
         
         if (QuizCSV)
         {
+            if (ChooseQuiz == QuizType.Math && QuizCSV.name != "MathQ")
+            {
+                QuizCSV = Resources.Load("MathQ") as TextAsset;
+            }
             AllText = QuizCSV.text;
             data = new string[AllText.Split('\n').Length,AllText.Split('\n')[0].Split(',').Length];
             CSVHeight = AllText.Split('\n').Length;
@@ -203,6 +207,19 @@ public class QuizCSVParser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ChooseQuiz == QuizType.NotYet)
+        {
+            QuizLambdaBool = false;
+        }
+        if (ChooseQuiz != QuizType.NotYet)
+        {
+            QuizLambdaBool = true;
+            var State = gameObject.GetComponent<EndingManager>();
+            if (State.CurrentEndingState == EndingManager.EndingState.GameNotStart)
+            {
+                State.CurrentEndingState = EndingManager.EndingState.GamePlaying;
+            }
+        }
         if (CurrentPlayState == PlayState.QuizFinished)
         {
             print(this.name + "Current play state check");

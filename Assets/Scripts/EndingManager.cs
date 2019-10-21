@@ -9,36 +9,100 @@ public class EndingManager : MonoBehaviour
     public GameObject BadEnding;
     public GameObject PauseButton;
     public GameObject PauseCanvas;
-    public enum EndingState { GameNotFinished,HappyEnding,BadEnding};
-    public EndingState CurrentEndingState = EndingState.GameNotFinished;
+    public enum EndingState {GameNotStart,GamePlaying,HappyEnding,BadEnding};
+    public EndingState CurrentEndingState = EndingState.GameNotStart;
+    private bool StateTrueFalse;
     // Start is called before the first frame update
+    public float EndingUIWaitTime = 3f;
     //코루틴으로 바꾸는 게 낫나???
     IEnumerator EndingMgrCoroutine()
     {
         while (true)
         {
             yield return new WaitForEndOfFrame();
-            if (CurrentEndingState != EndingState.GameNotFinished)
+            yield return new WaitUntil(()=>StateTrueFalse);
+            //StateTrueFalse==true일때만 작동되는 람다식            
+            if (CurrentEndingState!=EndingState.GameNotStart)
             {
+                print("IN")
+;
                 switch (CurrentEndingState)
                 {
+                    case EndingState.GamePlaying:
+                        if (Time.timeScale != 1)
+                        {
+                            Time.timeScale=1;
+                        }
+                        break;
                     case EndingState.HappyEnding:
-
+                        if (Time.timeScale != 0)
+                        {
+                            Time.timeScale = 0;
+                        }
                         if (HappyEnding.activeInHierarchy == false)
                         {
                             HappyEnding.SetActive(true);
+                        }
+                        yield return new WaitForSecondsRealtime(EndingUIWaitTime);
+                        if (PauseCanvas.activeInHierarchy == false)
+                        {
+                            PauseCanvas.SetActive(true);
+                            foreach (Transform child in PauseCanvas.transform)
+                            {
+                                if (child.gameObject.name == "Continue_But" && child.gameObject.activeInHierarchy == true)
+                                {
+                                    child.gameObject.SetActive(false);
+                                }
+                                if (child.gameObject.name == "Pause_Text" && child.gameObject.activeInHierarchy == true)
+                                {
+                                    child.gameObject.SetActive(false);
+                                }
+                            }
                         }
                         if (PauseButton.activeInHierarchy == true)
                         {
                             PauseButton.SetActive(false);
                         }
+                        break;
+                    case EndingState.BadEnding:
+                        if (Time.timeScale != 0)
+                        {
+                            Time.timeScale = 0;
+                        }
+                        if (BadEnding.activeInHierarchy == false)
+                        {
+                            BadEnding.SetActive(true);
+                        }
+                        yield return new WaitForSecondsRealtime(EndingUIWaitTime);
                         if (PauseCanvas.activeInHierarchy == false)
                         {
                             PauseCanvas.SetActive(true);
-                    }
+                            foreach (Transform child in PauseCanvas.transform)
+                            {
+                                if (child.gameObject.name == "Continue_But" && child.gameObject.activeInHierarchy == true)
+                                {
+                                    child.gameObject.SetActive(false);
+                                }
+                                if (child.gameObject.name == "Pause_Text" && child.gameObject.activeInHierarchy == true)
+                                {
+                                    child.gameObject.SetActive(false);
+                                }
+                            }
+                        }
+                        if (PauseButton.activeInHierarchy == true)
+                        {
+                            PauseButton.SetActive(false);
+                        }
                         break;
-                    case EndingState.BadEnding:
-                        break;
+                        
+                }
+                
+            }
+            else
+            {
+                if (Time.timeScale != 0)
+                {
+                    Time.timeScale = 0;
 
                 }
             }
@@ -79,11 +143,12 @@ public class EndingManager : MonoBehaviour
             BadEnding = transform.Find("BadEnding").gameObject;
 
         }
+        StartCoroutine(EndingMgrCoroutine());
 
     }
     void ManagingEndings()
     {
-        if (CurrentEndingState != EndingState.GameNotFinished)
+        if (CurrentEndingState != EndingState.GamePlaying)
         {
             if (Time.timeScale != 0)
             {
@@ -117,6 +182,31 @@ public class EndingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ManagingEndings();
+        if (CurrentEndingState!=EndingState.GameNotStart)
+        {
+            StateTrueFalse = true;
+        }
+        else
+        {
+            if (CurrentEndingState == EndingState.GameNotStart)
+            {
+                if (this.gameObject.GetComponent<QuizCSVParser>().ChooseQuiz != QuizCSVParser.QuizType.NotYet)
+                {
+                    if (CurrentEndingState != EndingState.GamePlaying)
+                    {
+                        CurrentEndingState = EndingState.GamePlaying;
+                    }
+                }
+                else
+                {
+                    StateTrueFalse = false;
+                    if (Time.timeScale != 0)
+                    {
+                        Time.timeScale = 0;
+                    }
+                }
+            }
+        }
+        // ManagingEndings();
     }
 }

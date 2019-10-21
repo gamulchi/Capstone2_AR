@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AfiZ2AH/////AAAAGVfszOjbuU7OqlgRcQWfW5xj0APeYmhbpCYYoUSz3DW5UZTRcW752dXK1mEWM8wJxbEXhu+AMtPDrcKl2OJi/xs9MS+PmPYtKvOHBYE5IboZvYoC0wQ0kqFazyOMng6BtgqplRrWqRXhw8bNsPHjdfCk3C1sX/w7yzDaayc+zWqDI2R2j/BQcVsJKhuEcLa4e4//yoMDNmJHSA3TdoumzNZEC0+WKKgm0GcUKqTG3F9Ti17Agmx7lycnu9JERy11UWuV+RauRwBxKwxyccEAPnN5s8CyQDe9pQYCZ9yQOuAnQxv4ctnKjFPit2HzoLFhCvUuAj7lUmFyj7hybgyHdlNjB2MDR4gqFAQYQIHRW7Ik
-    ufoLicenseKey: QVFFaURnUC8vLy8vQUFBQUtCT29KeURjQmtQNnB0Z1hGeHdvQ3JvWTJReElLNlFsampJK0ppVEpvamxCT04vSDA3NHJaWWdwd3hFVlpDdWJpa0Y1UmFhQ0pSRHFFdTVNY2syeGtrMUZlSC91Zmh0U1RuTlJHa1RIUUxuNjQ4TDhuZmF4NWZVL2I3NkR4SlRyUTNkVFpqOWtXOXlBN0xEYnYwcGdzei91OHFpQk4zRXNsUVlrblRiY1FQeTM5enowdEFFSllIOTE1RDB1VjlSbHRFbG1HbUlMUGtQVFMwdmt5V0F0TE14YnlSN1kwZk1VRldqYkRsTkY3UnQ4UXg4d01VeTJTNTFYbUhPOFNxWlo4S1VOMnFaalRSWDFvc1FqckxtUWgrVGVzZUgrR0tUbVNSZTI3Q0YrWGl1K3pnaDV2ZnB3cXhoa2Y5R3Y4SFpzUjk1VHpZUG1VbnVDa0tXTkxtUncvZll5cUFCN1JuYWU1VzREcngwZDlNR0M=
+    vuforiaLicenseKey: 
+    ufoLicenseKey: QWZIT1poei8vLy8vQUFBQUtJZHF2UlAxNkVjL21kREd4Rkd2SjNPYThkeisxYzg0Zk1VRVFtYkxDcWljWm5WbWFOTWNjQXFOSW5rZFNEMXRSRGlNZ1JweThpY1dGdFdsa0JLQmExZEZuQjZHcTNCVDhtaUMyN3pJZDFCelMrd0ZsL01xeTFoNmZRTFFrSGF2NEsrdUlDd0hQYXVmbitvMUNGODQrSlppTlE1V0ZkL2M4K0pxcWY1L0gwOUxwUGhlNmtPaFRNNXUwcDhqa1Y2dXRYYTdZYUkrV2dxeE9RMHF5bUtKMmd0S0dPS3EwdjVVeTh0cEM0Um9OZEF4U3VBT0FmNmVmM3F2R2doR2YvQTVBNFFrRkNUT0tKRXBseEgycFFqWkpLYnk5V2lsb3lmWWlKeXZIcElPRjlvUitjWmd3YVIwVDRXcXRpTFJQSDRNYUJQN05lTjJ1L1RoOTRBcy8ySDZNaE5HSkwrbjVtM0EvbDNnQjdkdXF1Vnc=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
     maxSimultaneousImageTargets: 1
@@ -53,9 +53,9 @@ MonoBehaviour:
     matteShader: {fileID: 4800000, guid: 66d0d78a3000021448b598bb54a3bfdf, type: 3}
     videoBackgroundEnabled: 1
   deviceTracker:
-    autoInitTracker: 1
-    autoStartTracker: 1
-    trackingMode: 0
+    autoInitTracker: 0
+    autoStartTracker: 0
+    trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
     modelTransformEnabled: 0

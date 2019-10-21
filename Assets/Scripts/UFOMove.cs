@@ -33,9 +33,9 @@ public class UFOMove : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             print("Ufo Meets Ground "+  this.gameObject.name);
-            if (GameObject.FindGameObjectWithTag("Canvas").transform.Find("Life").gameObject.GetComponent<LifeManager>().IsTouched == false)
+            if (GameObject.FindGameObjectWithTag("Canvas").transform.Find("Life").gameObject.GetComponent<LifeManager>().CurrentLifeCount > 0)
             {
-                GameObject.FindGameObjectWithTag("Canvas").transform.Find("Life").gameObject.GetComponent<LifeManager>().IsTouched=true;
+                GameObject.FindGameObjectWithTag("Canvas").transform.Find("Life").gameObject.GetComponent<LifeManager>().CurrentLifeCount--;
             }
             Destroy(this.gameObject);
         }

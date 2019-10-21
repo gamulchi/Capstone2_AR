@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-       
+        StartCoroutine(BulletTime());
     }
 
     // Update is called once per frame
@@ -54,6 +54,8 @@ public class PlayerAttack : MonoBehaviour
             {
                 //이 switch 문 이 있어야 한번 터치할때 Bullet 여러개 instantiate 안됨
                 case TouchPhase.Ended:
+                    print("TOUCH");
+
                     if (TimeCheckStart == false)
                     {
                         if (Bullet && GameObject.FindGameObjectWithTag("Canvas").GetComponent<QuizCSVParser>().CurrentPlayState == QuizCSVParser.PlayState.NoQuiz)
